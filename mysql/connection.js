@@ -1,20 +1,29 @@
+const mysql = require("mysql");
+
 const pool = mysql.createPool({
 	connectionLimit: 50,
+<<<<<<< HEAD
 	host: "localhost",
+=======
+	host: "35.225.218.226",
+>>>>>>> 833587b1895feebd08d58b6b51f0ea641ee79d89
 	user: "root",
 	password: "password12345",
 	database: "hackathon2"
 });
-
-const mysql = require("mysql");
 
 class Connection {
 	constructor() {
 		if (!this.pool) {
 			console.log("creating connection pool...");
 			this.pool = mysql.createPool({
+<<<<<<< HEAD
 				connectionLimit:50,
 				host: "localhost",
+=======
+				connectionLimit: 50,
+				host: "35.225.218.226",
+>>>>>>> 833587b1895feebd08d58b6b51f0ea641ee79d89
 				user: "root",
 				password: "password12345",
 				database: "hackathon2"
@@ -31,7 +40,4 @@ const instance = new Connection();
 
 module.exports = instance;
 
-// THIS GOES INTO FILES TO CALL THIS FILE
-// NOT NEEDED HERE BUT I PASTED IT SO WE CAN FIND   // IT EASILY
-
-// const pool = require('./sql/connection');
+// const pool = require("./sql/connection");

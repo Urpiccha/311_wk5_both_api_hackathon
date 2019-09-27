@@ -1,9 +1,9 @@
 const pool = mysql.createPool({
-	connectionLimit: 100,
+	connectionLimit: 50,
 	host: "localhost",
 	user: "root",
 	password: "password12345",
-	database: "admin"
+	database: "hackathon2"
 });
 
 const mysql = require("mysql");
@@ -13,11 +13,11 @@ class Connection {
 		if (!this.pool) {
 			console.log("creating connection pool...");
 			this.pool = mysql.createPool({
-				connectionLimit: 100,
+				connectionLimit:50,
 				host: "localhost",
 				user: "root",
 				password: "password12345",
-				database: "admin"
+				database: "hackathon2"
 			});
 
 			return this.pool;

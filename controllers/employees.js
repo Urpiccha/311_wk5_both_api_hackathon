@@ -1,7 +1,7 @@
 const pool = require("../mysql/connection");
 
 const getEmployees = (req, res) => {
-	pool.query("SELECT * FROM employees", (err, rows) => {
+	pool.query("SELECT * FROM employees.employees", (err, rows) => {
 		if (err) {
 			console.log({ message: " Ya Done Gud! " + err });
 			return res.send("Getting Employees....");
@@ -11,7 +11,7 @@ const getEmployees = (req, res) => {
 };
 
 const getEmployeesById = (req, res) => {
-	pool.query("SELECT * FROM employees.id", (err, rows) => {
+	pool.query("SELECT * FROM employees.employees.emp_no", (err, rows) => {
 		if (err) {
 			console.log({ message: " Ya Done Gud! " + err });
 			return res.send("Getting Employees....");

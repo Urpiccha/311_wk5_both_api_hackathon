@@ -5,6 +5,7 @@ const { handleSQLError } = require('../mysql/error');
 
 const getEmployees = (req, res) => {
 	let sql = " SELECT * FROM ?? LIMIT ?"
+	//let replacements = {'employees'}
 	sql = mysql.format(sql, ["employees", 50])
 	pool.query(sql, (err, rows) => {
 		if (err) return handleSQLError(res,err)

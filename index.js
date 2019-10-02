@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
+
 const bodyParser = require("body-parser");
+const employeesRoutes = require('./routes/employees');
 
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4001
+;
 
-const employeesRoutes = require("./routes/employees");
+
 
 app.use(bodyParser.json());
 

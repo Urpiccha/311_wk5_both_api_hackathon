@@ -22,5 +22,3 @@ class Connection {
 const instance = new Connection();
 
 module.exports = instance;
-
-//const pool = require("./sql/connection");

@@ -2,21 +2,23 @@ const express = require("express");
 const app = express();
 
 const bodyParser = require("body-parser");
-const employeesRoutes = require('./routes/employees');
+const employeesRouter = require("./routes/employees");
+const salariesRouter = require("./routes/salaries");
+const departmentsRouter = require("./routes/departments");
+const titlesRouter = require("./routes/titles");
 
-const port = process.env.PORT || 4001
-;
-
-
+const port = process.env.PORT || 4001;
 
 app.use(bodyParser.json());
-
-app.use(employeesRoutes);
+app.use(employeesRouter);
+app.use(salariesRouter);
+app.use(departmentsRouter);
+app.use(titlesRouter);
 
 app.get("/", (req, res) => {
 	res.send("Welcome to Our API");
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}!`);
+	console.log(`The Best Group Ever is listening on port ${port}!`);
 });

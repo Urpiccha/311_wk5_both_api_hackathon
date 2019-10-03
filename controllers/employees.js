@@ -5,7 +5,7 @@ const { handleSQLError } = require('../mysql/error');
 
 const getEmployees = (req, res) => {
 	let sql = " SELECT * FROM ?? LIMIT ?"
-	//let replacements = {'employees'}
+	
 	sql = mysql.format(sql, ["employees", 50])
 	pool.query(sql, (err, rows) => {
 		if (err) return handleSQLError(res,err)
@@ -21,21 +21,18 @@ const getEmployeesById = (req, res) => {
 	pool.query(sql, (err,rows) => {
 		if (err) return handleSQLError(res, err)
 		return res.json(rows);
-	})
+	});
 };
 
-// const getEmployeesByFirstName = (req, res) => {
-// 	pool.query(
-// 		"SELECT * FROM employees.firstname/:first_name WHERE first_name == req.params.first_name",
-// 		(err, _rows) => {
-// 			if (err) {
-// 				console.log({ message: " Yins' Done Bad! " + err });
-// 				return res.send("Getting Employees....");
-// 			}
-// 			res.json(employees);
-// 		}
-// 	);
-// };
+const getEmployeesByFirstName = (req, res) => {
+	let sql = " SELECT * FROM ?? WHERE ?? = ?";
 
-module.exports = { getEmployees, getEmployeesById };
-//getEmployeesByFirstName
+	sql = mysql.format(sql, ["employees", "first_name", req.param.first_name])
+
+	pool.query(sql, (err,rows) => {
+		if (err) return handleSQLError(res, err)
+		return res.json(rows);
+	});
+};
+
+module.exports = { getEmployees, getEmployeesById, getEmployeesByFirstName };

@@ -5,7 +5,7 @@ const getSalary = require("../controllers/getSalaries");
 const getSalaryById = require("../controllers/getSalaryById");
 const getSalaryByFirstName = require("../controllers/getSalaryByFirstName");
 
-router.get("/salaries", getSalary.getSalary);
+router.get("/salaries", getSalary.getSalaries);
 router.get("/salaries/:id", getSalaryById.getSalaryById);
 router.get(
 	"/salaries/firstname/:firstname",

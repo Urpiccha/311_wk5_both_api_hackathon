@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const getTitles = require("../controllers/GetAllTitles");
+const getTitles = require("../controllers/getAllTitles");
 const getEmployeeTitles = require("../controllers/getTitlesById");
 
 router.get("/titles", getTitles.getAllTitles);

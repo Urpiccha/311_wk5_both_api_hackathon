@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const pool = require("../mysql/connections");
+const pool = require("../mysql/connection");
 const { handleSQLError } = require("../mysql/error");
 
 const getDeptsByEmpId = (req, res) => {

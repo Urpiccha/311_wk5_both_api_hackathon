@@ -1,8 +1,8 @@
 const mysql = require("mysql");
-const pool = require("../mysql/connections");
+const pool = require("../mysql/connection");
 const { handleSQLError } = require("../mysql/error");
 
-const titlesById = (req, res) => {
+const getTitlesById = (req, res) => {
 	let sql = "SELECT ??, ??, ?? FROM ?? JOIN ?? WHERE ?? = ?? AND ?? = ?";
 	sql = mysql.format(sql, [
 		"employees.first_name",
@@ -22,4 +22,4 @@ const titlesById = (req, res) => {
 	});
 };
 
-module.exports = { titlesById };
+module.exports = { getTitlesById };

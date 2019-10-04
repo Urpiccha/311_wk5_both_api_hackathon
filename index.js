@@ -7,7 +7,7 @@ const salariesRouter = require("./routes/salaries");
 const departmentsRouter = require("./routes/departments");
 const titlesRouter = require("./routes/titles");
 
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4002;
 
 app.use(bodyParser.json());
 app.use(employeesRouter);
